@@ -1,0 +1,11 @@
+#!/bin/bash
+os=`uname`
+echo $os
+
+exclude="--exclude-from exclude"
+if [[ -n `uname | grep CYGWIN` ]]; then
+	exclude="--exclude-from exclude_cygwin"
+fi
+
+rsync -rvz --delete --delete-excluded $exclude .vim .vimrc .gvimrc ~
+#rm -r ~/.vim/bundle/snipMate/snippets

@@ -1,0 +1,4 @@
+#!/usr/local/bin/bash
+
+exclude="--exclude-from exclude_freebsd"
+rsync -avz --delete-excluded --delete $exclude .vim .vimrc .gvimrc ~

@@ -1,0 +1,11 @@
+global p!
+import datetime
+endglobal
+
+snippet woh
+Work Order : 
+Date       : `!p import datetime
+snip.rv = datetime.date.today()`
+Client     : 
+endsnippet
+
