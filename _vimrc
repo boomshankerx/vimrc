@@ -53,7 +53,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired' 
 Plugin 'utl.vim'
 
-set rtp+=~/vimfiles/bungle/powerline/powerline/bindings/vim
+set rtp+=~/vimfiles/bundle/powerline/powerline/bindings/vim
 
 " GENERAL
 filetype plugin indent on
