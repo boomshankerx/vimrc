@@ -7,7 +7,7 @@ if [[ -n `uname | grep CYGWIN` ]]; then
 	exclude="--exclude-from exclude_cygwin"
 fi
 
-#rsync -rvz --delete --delete-excluded $exclude .vim .vimrc ~
+rsync -rvz --delete --delete-excluded $exclude .vim .vimrc ~
 
 if [[ "$os" == "Darwin" ]]; then
     echo "I'm a MAC..."
