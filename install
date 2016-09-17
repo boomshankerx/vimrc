@@ -7,5 +7,11 @@ if [[ -n `uname | grep CYGWIN` ]]; then
 	exclude="--exclude-from exclude_cygwin"
 fi
 
-rsync -rvz --delete --delete-excluded $exclude .vim .vimrc .gvimrc ~
+#rsync -rvz --delete --delete-excluded $exclude .vim .vimrc ~
+
+if [[ "$os" == "Darwin" ]]; then
+    echo "I'm a MAC..."
+    sed -i'' -e 's/set guifont=.*/set guifont=DejaVu\\ Sans\\ Mono\\ for\\ Powerline:h11/' ~/.vimrc
+fi
+
 #rm -r ~/.vim/bundle/snipMate/snippets
