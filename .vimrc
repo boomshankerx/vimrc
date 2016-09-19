@@ -52,6 +52,7 @@ Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired' 
 Plugin 'utl.vim'
+Plugin 'vimwiki/vimwiki'
 
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 

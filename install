@@ -3,8 +3,8 @@ os=`uname`
 echo $os
 
 exclude="--exclude-from exclude"
-if [[ -n `uname | grep CYGWIN` ]]; then
-	exclude="--exclude-from exclude_cygwin"
+if [[ "$os" == "FreeBSD" ]]; then
+	exclude="--exclude-from exclude_freebsd"
 fi
 
 rsync -rvz --delete --delete-excluded $exclude .vim .vimrc ~
