@@ -1,4 +1,5 @@
 .vim/bundle
-/*.vim/ftplugins*/
 /*.vim/after*/
+/*.vim/ftplugins*/
 archive
+log.txt
