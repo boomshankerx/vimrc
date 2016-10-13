@@ -13,5 +13,3 @@ if [[ "$os" == "Darwin" ]]; then
     echo "I'm a MAC..."
     sed -i'' -e 's/set guifont=.*/set guifont=DejaVu\\ Sans\\ Mono\\ for\\ Powerline:h11/' ~/.vimrc
 fi
-
-#rm -r ~/.vim/bundle/snipMate/snippets
