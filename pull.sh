@@ -13,6 +13,6 @@ do
 done
 
 echo 'Syncing vim configuration'
-rsync -rtvz --delete --delete-excluded --exclude=.git ~/.vim ~/.vimrc ~/.gvimrc .
+rsync -rtvz --delete --delete-excluded --exclude=.git ~/.vim ~/.vimrc .
 . convert.sh
 echo `date` >> log.txt
