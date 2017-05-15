@@ -5,7 +5,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 set rtp+=~/vimfiles/bundle/vundle/
-call vundle#rc()
+call vundle#rc('$HOME/vimfiles/bundle')
 
 " Vundle 
 Plugin 'gmarik/vundle'
@@ -14,7 +14,7 @@ Plugin 'gmarik/vundle'
 "Plugin 'bling/vim-airline'
 Plugin 'Align'
 Plugin 'FuzzyFinder'
-Plugin 'HTML.zip'
+"Plugin 'HTML.zip'
 Plugin 'L9'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'SirVer/ultisnips'

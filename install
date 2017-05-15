@@ -7,7 +7,7 @@ if [[ "$os" == "FreeBSD" ]]; then
 	exclude="--exclude-from exclude_freebsd"
 fi
 
-rsync -rvz --delete --delete-excluded $exclude .vim .vimrc ~
+rsync -rv --delete --delete-excluded $exclude .vim .vimrc ~
 
 if [[ "$os" == "Darwin" ]]; then
     echo "I'm a MAC..."
