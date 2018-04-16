@@ -10,31 +10,31 @@ call vundle#rc('$HOME/vimfiles/bundle')
 " Vundle 
 Plugin 'gmarik/vundle'
 " Plugins
-"Plugin 'andrewle/vim-autoclose'
-"Plugin 'bling/vim-airline'
 Plugin 'Align'
 Plugin 'FuzzyFinder'
-"Plugin 'HTML.zip'
 Plugin 'L9'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'SirVer/ultisnips'
+Plugin 'airblade/vim-gitgutter.git'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'antlypls/vim-colors-codeschool'
 Plugin 'closetag.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'elzr/vim-json' 
 Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
 Plugin 'honza/vim-snippets'
 Plugin 'jceb/vim-orgmode'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'junegunn/fzf'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
-"Plugin 'plasticboy/vim-markdown'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
 Plugin 'project.tar.gz'
+Plugin 'python-rope/ropevim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -50,6 +50,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired' 
+Plugin 'tweekmonster/django-plus.vim'
 Plugin 'utl.vim'
 Plugin 'vimwiki/vimwiki'
 
@@ -95,34 +96,49 @@ set tabstop=4
 set foldmethod=indent
 set foldlevel=99
 
-" PLUGIN SETTINGS
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-let g:Powerline_symbols = 'fancy'
-
-" COMMENTS
-"let g:ECuseSyntax=1
-
 " AUTO COMPLETION
+set omnifunc=syntaxcomplete#Complete
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,xhtml,smarty set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
+" PLUGIN SETTINGS
+let g:Powerline_symbols = 'fancy'
+let g:django_filetypes = '*.py'
+" COMMENTS
+"let g:ECuseSyntax=1
+
+
+" ROPE
+let ropevim_extended_complete = 1
+let ropevim_enable_autoimport = 1 
+let g:ropevim_autoimport_modules = ["os.*","traceback","django.*"] 
+imap <s-space> <C-R>=RopeCodeAssistInsertMode()<CR>
+
+" JEDI
+let g:jedi#completions_command = "<C-Space>"
+let g:jedi#auto_close_doc = 1
+
 " HTML
-let g:no_html_tab_mapping = 'yes'
-let g:html_template = '~/vimfiles/templates/html5'
-autocmd Filetype smarty,xhtml,html,xml,xsl source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
-autocmd Filetype smarty source ~/vimfiles/bundle/HTML.zip/ftplugin/html/html.vim
+autocmd Filetype html,xhtml,xml,xsl source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
 autocmd Filetype html,xhtml,php set nowrap
 
 " PROJECT
 let g:proj_run1 = ':vnew %f'
 
-"SuperTab
+" SuperTab
 let g:SuperTabDefaultCompletionType = "context"
+
+"UltiSnips
+"let g:UltiSnipsExpandTrigger       = "<c-j>"
+"let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
+let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on current file
 
 " ZENCODING 
 let g:user_zen_leader_key = ',,'
@@ -135,7 +151,7 @@ inoremap <silent> <C-S> <C-O>:update<CR>
 vnoremap <silent> <C-S> <C-C>:update<CR>
 
 imap <C-Enter> <ESC>"+gpa
-imap <C-Space> <C-x><C-o>
+"imap <C-Space> <C-x><C-o>
 imap jj <esc>
 
 nmap ,v :so ~/_vimrc<CR>
