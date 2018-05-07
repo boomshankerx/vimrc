@@ -2,7 +2,7 @@
 os=`uname`
 echo $os
 
-exclude="--exclude-from exclude"
+exclude="--exclude-from exclude.linux"
 if [[ "$os" == "FreeBSD" ]]; then
 	exclude="--exclude-from exclude.freebsd"
 fi
