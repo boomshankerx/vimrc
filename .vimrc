@@ -111,9 +111,17 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 " PLUGIN SETTINGS
 let g:Powerline_symbols = 'fancy'
 let g:django_filetypes = '*.py'
-" COMMENTS
-"let g:ECuseSyntax=1
 
+" YCM
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+"UltiSnips
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on current file
 
 " ROPE
 let ropevim_extended_complete = 1
@@ -132,19 +140,10 @@ autocmd Filetype html,xhtml,php set nowrap
 " PROJECT
 let g:proj_run1 = ':vnew %f'
 
-" SuperTab
-let g:SuperTabDefaultCompletionType = "context"
-
-"UltiSnips
-"let g:UltiSnipsExpandTrigger       = "<c-j>"
-"let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
-"let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
-let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on current file
-
 " ZENCODING 
 let g:user_zen_leader_key = ',,'
 
-" CUSTOM MAPS
+" KEYBOARD MAPS
 :so ~/.vim/scripts/cucumber.vim
 
 nnoremap <silent> <C-S> :update<CR>
