@@ -35,7 +35,7 @@ Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
 Plugin 'project.tar.gz'
-Plugin 'python-rope/ropevim'
+"Plugin 'python-rope/ropevim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -44,6 +44,7 @@ Plugin 'skammer/vim-css-color'
 Plugin 'taglist.vim'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-pathogen'
@@ -110,28 +111,17 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 " PLUGIN SETTINGS
 let g:Powerline_symbols = 'fancy'
-let g:django_filetypes = '*.py'
-
-" YCM
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
-
-"UltiSnips
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on current file
-
-" ROPE
-let ropevim_extended_complete = 1
-let ropevim_enable_autoimport = 1 
-let g:ropevim_autoimport_modules = ["os.*","traceback","django.*"] 
-imap <s-space> <C-R>=RopeCodeAssistInsertMode()<CR>
-
-" JEDI
+let g:UltiSnipsExpandTrigger       = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
+let g:UltiSnipsListSnippets        = "<c-s-k>" "List possible snippets based on current file
+let g:django_filetypes = '*.py'
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#auto_close_doc = 1
+let g:user_emmet_leader_key=',,'
 
 " HTML
 autocmd Filetype html,xhtml,xml,xsl source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
@@ -140,18 +130,12 @@ autocmd Filetype html,xhtml,php set nowrap
 " PROJECT
 let g:proj_run1 = ':vnew %f'
 
-" ZENCODING 
-let g:user_zen_leader_key = ',,'
-
 " KEYBOARD MAPS
-:so ~/vimfiles/scripts/cucumber.vim
-
 nnoremap <silent> <C-S> :update<CR>
 inoremap <silent> <C-S> <C-O>:update<CR>
 vnoremap <silent> <C-S> <C-C>:update<CR>
 
 imap <C-Enter> <ESC>"+gpa
-"imap <C-Space> <C-x><C-o>
 imap jj <esc>
 
 nmap ,v :so ~/_vimrc<CR>
