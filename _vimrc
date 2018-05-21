@@ -119,7 +119,7 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 
 "UltiSnips
 let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger` = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on current file
 
