@@ -17,8 +17,6 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter.git'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'antlypls/vim-colors-codeschool'
 Plugin 'closetag.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'davidhalter/jedi-vim'
@@ -33,9 +31,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
+"Plugin 'python-rope/ropevim'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
 Plugin 'project.tar.gz'
-"Plugin 'python-rope/ropevim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -55,6 +53,13 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tweekmonster/django-plus.vim'
 Plugin 'utl.vim'
 Plugin 'vimwiki/vimwiki'
+
+" COLOR SCHEMES
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'antlypls/vim-colors-codeschool'
+Plugin 'chriskempson/base16-vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'tomasr/molokai'
 
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
@@ -78,7 +83,7 @@ set splitright
 set textwidth=0
 
 " VISUAL
-colorscheme codeschool
+colorscheme gruvbox
 set background=dark
 set columns=110
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
@@ -93,6 +98,7 @@ set shiftwidth=4
 set smartindent
 set softtabstop=4
 set tabstop=4
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " FOLDING
 set foldmethod=indent
