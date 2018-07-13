@@ -137,19 +137,23 @@ autocmd Filetype html,xhtml,php set nowrap
 let g:proj_run1 = ':vnew %f'
 
 " KEYBOARD MAPS
-nnoremap <silent> <C-S> :update<CR>
-inoremap <silent> <C-S> <C-O>:update<CR>
-vnoremap <silent> <C-S> <C-C>:update<CR>
-
-imap <C-Enter> <ESC>"+gpa
-imap jj <esc>
-
-nmap ,v :so ~/.vimrc<CR>
-nmap ,vv :e ~/.vimrc<CR>
+nnoremap <silent> <C-s> :update<CR>
+if has('gui_running')
+    nnoremap <M-j> :m .+1<CR>==
+    nnoremap <M-k> :m .-2<CR>==
+else
+    nnoremap j :m .+1<CR>==
+    nnoremap k :m .-2<CR>==
+endif
+nmap ,v :e ~/.vimrc<CR>
+nmap ,vv :so ~/.vimrc<CR>
 nmap <C-Enter> <ESC>"+gPa
 nmap <F3> :CtrlP<CR>
 nmap <F4> :NERDTree<CR>
 nmap <F5> :w<CR>
+
+imap <C-Enter> <ESC>"+gpa
+imap jj <esc>
 
 " VISUAL MAPS
 vmap <C-C> "+y
