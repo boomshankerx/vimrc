@@ -116,18 +116,19 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 " PLUGIN SETTINGS
-let g:Powerline_symbols = 'fancy'
-let g:SuperTabDefaultCompletionType = '<C-n>'
-let g:UltiSnipsExpandTrigger       = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
-let g:UltiSnipsListSnippets        = "<c-s-k>" "List possible snippets based on current file
-let g:django_filetypes = '*.py'
+let g:Powerline_symbols                = 'fancy'
+let g:django_filetypes                 = '*.py'
+let g:jedi#auto_close_doc              = 1
+let g:jedi#completions_command         = "<C-Space>"
+let g:user_emmet_leader_key            = ',,'
+
+let g:SuperTabDefaultCompletionType    = "<C-n>"
+let g:UltiSnipsExpandTrigger           = "<C-j>"
+let g:UltiSnipsJumpForwardTrigger      = "<C-j>"
+let g:UltiSnipsJumpBackwardTrigger     = "<C-k>"
+"let g:UltiSnipsListSnippets            = "<C-S-k>" "List possible snippets based on current file
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#auto_close_doc = 1
-let g:user_emmet_leader_key=',,'
+let g:ycm_key_list_select_completion   = ['<C-n>', '<Down>']
 
 " HTML
 autocmd Filetype html,xhtml,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
@@ -138,6 +139,7 @@ let g:proj_run1 = ':vnew %f'
 
 " KEYBOARD MAPS
 nnoremap <silent> <C-s> :update<CR>
+nnoremap <space> <C-w>w
 if has('gui_running')
     nnoremap <M-j> :m .+1<CR>==
     nnoremap <M-k> :m .-2<CR>==
@@ -145,8 +147,8 @@ else
     nnoremap j :m .+1<CR>==
     nnoremap k :m .-2<CR>==
 endif
-nmap ,v :e ~/.vimrc<CR>
-nmap ,vv :so ~/.vimrc<CR>
+nmap ,v :so ~/.vimrc<CR>
+nmap ,vv :e ~/.vimrc<CR>
 nmap <C-Enter> <ESC>"+gPa
 nmap <F3> :CtrlP<CR>
 nmap <F4> :NERDTree<CR>
@@ -156,6 +158,6 @@ imap <C-Enter> <ESC>"+gpa
 imap jj <esc>
 
 " VISUAL MAPS
-vmap <C-C> "+y
+vmap <C-c> "+y
 vmap <F5> :sort<CR>
 vmap <F2> d:execute 'normal i' . join(sort(split(getreg('"'))), ' ')<CR>
