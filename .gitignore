@@ -1,5 +1,4 @@
+*.swp
 .vim/bundle
 /*.vim/after*/
 /*.vim/ftplugins*/
-archive
-log.txt

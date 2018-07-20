@@ -38,7 +38,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
-Plugin 'skammer/vim-css-color'
+"Plugin 'skammer/vim-css-color'
 Plugin 'taglist.vim'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-abolish'
@@ -139,7 +139,9 @@ let g:proj_run1 = ':vnew %f'
 
 " KEYBOARD MAPS
 nnoremap <silent> <C-s> :update<CR>
-nnoremap <space> <C-w>w
+nnoremap <Space> <C-w>w
+nnoremap <Enter> <C-w>W
+
 if has('gui_running')
     nnoremap <M-j> :m .+1<CR>==
     nnoremap <M-k> :m .-2<CR>==
@@ -147,8 +149,8 @@ else
     nnoremap j :m .+1<CR>==
     nnoremap k :m .-2<CR>==
 endif
-nmap ,v :so ~/_vimrc<CR>
-nmap ,vv :e ~/_vimrc<CR>
+nmap <leader>v :so ~/_vimrc<CR>
+nmap <leader>vv :e ~/_vimrc<CR>
 nmap <C-Enter> <ESC>"+gPa
 nmap <F3> :CtrlP<CR>
 nmap <F4> :NERDTree<CR>
