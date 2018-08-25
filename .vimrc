@@ -119,7 +119,7 @@ let g:Powerline_symbols                = 'fancy'
 let g:django_filetypes                 = '*.py'
 let g:jedi#auto_close_doc              = 1
 let g:jedi#completions_command         = "<C-Space>"
-let g:user_emmet_leader_key            = ',,'
+let g:user_emmet_leader_key            = ','
 
 let g:SuperTabDefaultCompletionType    = "<C-n>"
 let g:UltiSnipsExpandTrigger           = "<C-j>"
@@ -148,17 +148,18 @@ else
     nnoremap j :m .+1<CR>==
     nnoremap k :m .-2<CR>==
 endif
-nmap <leader>v :so ~/.vimrc<CR>
-nmap <leader>vv :e ~/.vimrc<CR>
 nmap <C-Enter> <ESC>"+gPa
+nmap <C-c> V"+y
 nmap <F3> :CtrlP<CR>
 nmap <F4> :NERDTree<CR>
 nmap <F5> :w<CR>
+nmap <leader>v :so ~/.vimrc<CR>
+nmap <leader>vv :e ~/.vimrc<CR>
 
 imap <C-Enter> <ESC>"+gpa
 imap jj <esc>
 
 " VISUAL MAPS
 vmap <C-c> "+y
-vmap <F5> :sort<CR>
 vmap <F2> d:execute 'normal i' . join(sort(split(getreg('"'))), ' ')<CR>
+vmap <F5> :sort<CR>
