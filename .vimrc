@@ -15,7 +15,7 @@ Plugin 'FuzzyFinder'
 Plugin 'L9'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'SirVer/ultisnips'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'alvan/vim-closetag'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -65,7 +65,9 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 " GENERAL
 filetype plugin indent on
 set backspace=start,indent,eol
+set clipboard=unnamedplus
 set cursorline
+set diffopt+=vertical
 set encoding=utf-8
 set history=50
 set hlsearch
@@ -120,6 +122,7 @@ let g:django_filetypes                 = '*.py'
 let g:jedi#auto_close_doc              = 1
 let g:jedi#completions_command         = "<C-Space>"
 let g:user_emmet_leader_key            = ','
+let g:closetag_filenames               = '*.html,*.ovpn,*.xhtml,*.phtml'
 
 let g:SuperTabDefaultCompletionType    = "<C-n>"
 let g:UltiSnipsExpandTrigger           = "<C-j>"
@@ -130,36 +133,39 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:ycm_key_list_select_completion   = ['<C-n>', '<Down>']
 
 " HTML
-autocmd Filetype html,xhtml,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+autocmd Filetype html,ovpn,xhtml,xml,xsl source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
 autocmd Filetype html,xhtml,php set nowrap
 
 " PROJECT
 let g:proj_run1 = ':vnew %f'
 
-" KEYBOARD MAPS
-nnoremap <silent> <C-s> :update<CR>
-nnoremap <Space> <C-w>w
-nnoremap <Enter> <C-w>W
+" === KEYBOARD MAPS ===
+" NORMAL MODE
 
-if has('gui_running')
+" SWAP LINE UP AND DOWN
+if has('gui_running') 
     nnoremap <M-j> :m .+1<CR>==
     nnoremap <M-k> :m .-2<CR>==
 else
     nnoremap j :m .+1<CR>==
     nnoremap k :m .-2<CR>==
 endif
-nmap <C-Enter> <ESC>"+gPa
-nmap <C-c> V"+y
-nmap <F3> :CtrlP<CR>
-nmap <F4> :NERDTree<CR>
-nmap <F5> :w<CR>
-nmap <leader>v :so ~/.vimrc<CR>
-nmap <leader>vv :e ~/.vimrc<CR>
 
+nnoremap <C-Enter> <ESC>"+gPa
+nnoremap <C-c> V"+y
+nnoremap <Enter> <C-w>W
+nnoremap <F3> :CtrlP<CR>
+nnoremap <F4> :NERDTree<CR>
+nnoremap <F5> :w<CR>
+nnoremap <Space> <C-w>w
+nnoremap <leader>v :so ~/.vimrc<CR>
+nnoremap <leader>vv :e ~/.vimrc<CR>
+nnoremap <silent> <C-s> :update<CR>
+
+" INSERT MODE
 imap <C-Enter> <ESC>"+gpa
-imap jj <esc>
+imap jj <ESC>
 
-" VISUAL MAPS
+" VISUAL MODE
 vmap <C-c> "+y
-vmap <F2> d:execute 'normal i' . join(sort(split(getreg('"'))), ' ')<CR>
 vmap <F5> :sort<CR>
