@@ -14,15 +14,12 @@ function convert() {
     sed -i'' -e 's/set guifont=.*/set guifont=DejaVu_Sans_Mono_for_Powerline:h10:cANSI/' _vimrc
 }
 
-function init() {
-    echo "Running init..."
-    rm -fr ~/.vim/bundle/
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    vim +PluginInstall +qall
-    ~/.vim/bundle/YouCompleteMe/install.py
+function install() {
+    install_config
+    install_plugins
 }
 
-function install() {
+function install_config() {
     os=`uname`
     echo $os
 
@@ -38,8 +35,13 @@ function install() {
         echo "Installing for Mac"
         sed -i'' -e 's/set guifont=.*/set guifont=DejaVu\\ Sans\\ Mono\\ for\\ Powerline:h11/' ~/.vimrc
     fi
+}
 
-    init
+function install_plugins() {
+    rm -fr ~/.vim/bundle/
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+    vim +PluginInstall +qall
+    ~/.vim/bundle/YouCompleteMe/install.py
 }
 
 #Update repo with local config
@@ -55,27 +57,31 @@ function update() {
 #Show usage
 function show_help() {
     echo "Usage:"
-    echo "   --init    : Wipe installed plugins and reload"
     echo "-b|--backup  : Backup current config"
-    echo "-c|--convert : Convert config to win / mac"
+    echo "-c|--config  : Install config files"
     echo "-h|--help    : Show this message"
-    echo "-i|--install : Install config files and build plugins"
+    echo "-i|--install : Install config and plugins"
+    echo "-p|--plugins : Install plugins"
     echo "-u|--update  : Update repo with local config"
+    echo "-x|--convert : Convert config to win / mac"
+    echo "-y|          : Toggle YCM plugin inside config"
 }
 
-OPT=$(getopt -o bchiu --long backup,convert,help,init,install,update -- "$@")
+OPT=$(getopt -o bchipux --long backup,config,convert,help,init,install,update -- "$@")
 [ $? == 0 ] || exit 1
 eval set -- "$OPT"
 
 [ $# -gt 1 ] || show_help
 while true; do
     case $1 in
-           --init    ) init;;
         -b|--backup  ) backup;;
-        -c|--convert ) convert;;
+        -c|--config  ) install_config;;
         -h|--help    ) show_help;;
         -i|--install ) install;;
+        -p|--plugins ) install_plugins;;
         -u|--update  ) update;;
+        -x|--convert ) convert;;
+        -y           ) toggle_ycm;;
         --           ) shift; break;;
     esac
     shift
