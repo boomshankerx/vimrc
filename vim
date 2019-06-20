@@ -29,7 +29,7 @@ function install_config() {
         exclude="--exclude-from exclude.freebsd"
     fi
     
-    rsync -rv --delete --delete-excluded $exclude .vim .vimrc ~
+    rsync -rtv $exclude .vim .vimrc ~
 
     if [[ "$os" == "Darwin" ]]; then
         echo "Installing for Mac"

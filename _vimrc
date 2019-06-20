@@ -15,7 +15,7 @@ Plugin 'FuzzyFinder'
 Plugin 'L9'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'SirVer/ultisnips'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'alvan/vim-closetag'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -117,12 +117,13 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 " PLUGIN SETTINGS
+let g:NERDTreeShowHidden               = 1
 let g:Powerline_symbols                = 'fancy'
+let g:closetag_filenames               = '*.html,*.ovpn,*.xhtml,*.phtml'
 let g:django_filetypes                 = '*.py'
 let g:jedi#auto_close_doc              = 1
 let g:jedi#completions_command         = "<C-Space>"
 let g:user_emmet_leader_key            = ','
-let g:closetag_filenames               = '*.html,*.ovpn,*.xhtml,*.phtml'
 
 let g:SuperTabDefaultCompletionType    = "<C-n>"
 let g:UltiSnipsExpandTrigger           = "<C-j>"
@@ -158,6 +159,7 @@ nnoremap <F3> :CtrlP<CR>
 nnoremap <F4> :NERDTree<CR>
 nnoremap <F5> :w<CR>
 nnoremap <Space> <C-w>w
+nnoremap <S-Space> <C-w>h
 nnoremap <leader>v :so ~/_vimrc<CR>
 nnoremap <leader>vv :e ~/_vimrc<CR>
 nnoremap <silent> <C-s> :update<CR>
