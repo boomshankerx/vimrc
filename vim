@@ -47,7 +47,8 @@ function install_plugins() {
 #Update repo with local config
 function update() {
     echo 'Syncing vim configuration'
-    rsync -rtvz --delete --delete-excluded \
+    rsync -rtvz --delete \
+        --exclude-from exclude.linux \
         --exclude=.git \
         --exclude=.vim/bundle \
         ~/.vim ~/.vimrc .
