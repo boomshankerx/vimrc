@@ -134,7 +134,7 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:ycm_key_list_select_completion   = ['<C-n>', '<Down>']
 
 " HTML
-autocmd Filetype html,ovpn,xhtml,xml,xsl source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
+autocmd Filetype html,ovpn,xhtml,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 autocmd Filetype html,xhtml,php set nowrap
 
 " PROJECT
