@@ -41,13 +41,13 @@ function install_plugins() {
     rm -fr ~/.vim/bundle/
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim +PluginInstall +qall
-    ~/.vim/bundle/YouCompleteMe/install.py
+    python3 ~/.vim/bundle/YouCompleteMe/install.py
 }
 
 #Update repo with local config
-function update() {
+function sync() {
     echo 'Syncing vim configuration'
-    rsync -rtvz --delete \
+    rsync -rtv --delete \
         --exclude-from exclude.linux \
         --exclude=.git \
         --exclude=.vim/bundle \
@@ -63,12 +63,12 @@ function show_help() {
     echo "-h|--help    : Show this message"
     echo "-i|--install : Install config and plugins"
     echo "-p|--plugins : Install plugins"
-    echo "-u|--update  : Update repo with local config"
+    echo "-s|--sync    : Sync repo with local config"
     echo "-x|--convert : Convert config to win / mac"
     echo "-y|          : Toggle YCM plugin inside config"
 }
 
-OPT=$(getopt -o bchipux --long backup,config,convert,help,init,install,update -- "$@")
+OPT=$(getopt -o bchipsx --long backup,config,convert,help,init,install,sync -- "$@")
 [ $? == 0 ] || exit 1
 eval set -- "$OPT"
 
@@ -80,7 +80,7 @@ while true; do
         -h|--help    ) show_help;;
         -i|--install ) install;;
         -p|--plugins ) install_plugins;;
-        -u|--update  ) update;;
+        -s|--sync    ) sync;;
         -x|--convert ) convert;;
         -y           ) toggle_ycm;;
         --           ) shift; break;;

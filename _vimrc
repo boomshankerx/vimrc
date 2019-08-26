@@ -11,15 +11,11 @@ call vundle#rc('$HOME/vimfiles/bundle')
 Plugin 'gmarik/vundle'
 " Plugins
 Plugin 'Align'
-Plugin 'FuzzyFinder'
-Plugin 'L9'
-Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'SirVer/ultisnips'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'alvan/vim-closetag'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'docunext/closetag.vim'
 Plugin 'elzr/vim-json' 
 Plugin 'ervandew/supertab'
@@ -27,16 +23,13 @@ Plugin 'godlygeek/tabular'
 Plugin 'honza/vim-snippets'
 Plugin 'jceb/vim-orgmode'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'junegunn/fzf'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
-Plugin 'project.tar.gz'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
 Plugin 'taglist.vim'
 Plugin 'tomtom/tlib_vim'
@@ -49,9 +42,18 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired' 
-Plugin 'tweekmonster/django-plus.vim'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'utl.vim'
-Plugin 'vimwiki/vimwiki'
+" PLUGINS PYTHON
+Plugin 'davidhalter/jedi-vim'
+Plugin 'tweekmonster/django-plus.vim'
+" PLUGINS TRASH
+"Plugin 'FuzzyFinder'
+"Plugin 'L9'
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'junegunn/fzf'
+"Plugin 'project.tar.gz'
+"Plugin 'vimwiki/vimwiki'
 
 " COLOR SCHEMES
 Plugin 'altercation/vim-colors-solarized'
@@ -113,7 +115,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python set omnifunc=python3complete#Complete
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 " PLUGIN SETTINGS
@@ -123,13 +125,15 @@ let g:closetag_filenames               = '*.html,*.ovpn,*.xhtml,*.phtml'
 let g:django_filetypes                 = '*.py'
 let g:jedi#auto_close_doc              = 1
 let g:jedi#completions_command         = "<C-Space>"
+let g:syntastic_python_checkers        = ['python3']
 let g:user_emmet_leader_key            = ','
 
+" SUPERTAB/COMPLETION
 let g:SuperTabDefaultCompletionType    = "<C-n>"
 let g:UltiSnipsExpandTrigger           = "<C-j>"
 let g:UltiSnipsJumpForwardTrigger      = "<C-j>"
 let g:UltiSnipsJumpBackwardTrigger     = "<C-k>"
-"let g:UltiSnipsListSnippets            = "<C-S-k>" "List possible snippets based on current file
+let g:UltiSnipsListSnippets            = "<C-S-k>" "List possible snippets based on current file
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:ycm_key_list_select_completion   = ['<C-n>', '<Down>']
 
@@ -167,6 +171,7 @@ nnoremap <silent> <C-s> :update<CR>
 " INSERT MODE
 imap <C-Enter> <ESC>"+gpa
 imap jj <ESC>
+imap JJ <ESC>
 
 " VISUAL MODE
 vmap <C-c> "+y
