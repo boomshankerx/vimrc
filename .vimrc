@@ -23,7 +23,6 @@ Plugin 'godlygeek/tabular'
 Plugin 'honza/vim-snippets'
 Plugin 'jceb/vim-orgmode'
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
@@ -47,11 +46,12 @@ Plugin 'utl.vim'
 " PLUGINS PYTHON
 Plugin 'davidhalter/jedi-vim'
 Plugin 'tweekmonster/django-plus.vim'
-" PLUGINS TRASH
+" PLUGINS DISABLED
 "Plugin 'FuzzyFinder'
 "Plugin 'L9'
 "Plugin 'MarcWeber/vim-addon-mw-utils'
 "Plugin 'junegunn/fzf'
+"Plugin 'majutsushi/tagbar'
 "Plugin 'project.tar.gz'
 "Plugin 'vimwiki/vimwiki'
 
