@@ -1,71 +1,74 @@
-" Init vundle and pathogen
-filetype off                   " required!
-
+" pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
-" Vundle 
-Plugin 'gmarik/vundle'
-" Plugins
-Plugin 'Align'
-Plugin 'SirVer/ultisnips'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'airblade/vim-gitgutter.git'
-Plugin 'alvan/vim-closetag'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'docunext/closetag.vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'elzr/vim-json' 
-Plugin 'ervandew/supertab'
-Plugin 'godlygeek/tabular'
-Plugin 'honza/vim-snippets'
-Plugin 'jceb/vim-orgmode'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'justinmk/vim-sneak'
-Plugin 'majutsushi/tagbar'
-Plugin 'mattn/emmet-vim'
-Plugin 'othree/html5.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'sjl/gundo.vim'
-Plugin 'taglist.vim'
-Plugin 'tomtom/tlib_vim'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-cucumber'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-pathogen'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-speeddating'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired' 
-Plugin 'utl.vim'
-Plugin 'vim-syntastic/syntastic'
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/bundle')
+" PLUGINS
+Plug 'SirVer/ultisnips'
+Plug 'Valloric/YouCompleteMe'
+Plug 'airblade/vim-gitgutter'
+Plug 'alvan/vim-closetag'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'docunext/closetag.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'elzr/vim-json' 
+Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
+Plug 'honza/vim-snippets'
+Plug 'jceb/vim-orgmode'
+Plug 'jiangmiao/auto-pairs'
+Plug 'justinmk/vim-sneak'
+Plug 'majutsushi/tagbar'
+Plug 'mattn/emmet-vim'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'sjl/gundo.vim'
+Plug 'tomtom/tlib_vim'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-pathogen'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired' 
+Plug 'vim-scripts/Align'
+Plug 'vim-scripts/taglist.vim'
+Plug 'vim-scripts/utl.vim'
+Plug 'vim-syntastic/syntastic'
 " PLUGINS PYTHON
-Plugin 'davidhalter/jedi-vim'
-Plugin 'tweekmonster/django-plus.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'tweekmonster/django-plus.vim'
 " PLUGINS DISABLED
-"Plugin 'FuzzyFinder'
-"Plugin 'L9'
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-"Plugin 'junegunn/fzf'
-"Plugin 'majutsushi/tagbar'
-"Plugin 'project.tar.gz'
-"Plugin 'vimwiki/vimwiki'
+"Plug 'FuzzyFinder'
+"Plug 'L9'
+"Plug 'MarcWeber/vim-addon-mw-utils'
+"Plug 'junegunn/fzf'
+"Plug 'majutsushi/tagbar'
+"Plug 'project.tar.gz'
+"Plug 'vimwiki/vimwiki'
 
 " COLOR SCHEMES
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'antlypls/vim-colors-codeschool'
-Plugin 'chriskempson/base16-vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'tomasr/molokai'
+Plug 'altercation/vim-colors-solarized'
+Plug 'antlypls/vim-colors-codeschool'
+Plug 'chriskempson/base16-vim'
+Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
 
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+call plug#end()
+
 
 " GENERAL
 filetype plugin indent on
