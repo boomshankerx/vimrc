@@ -9,10 +9,9 @@ xcopy .vim\* "%USERPROFILE%\vimfiles\" /s /y /f
 pause
 
 ECHO INSTALL PLUGINS
-git clone https://github.com/gmarik/vundle.git %USERPROFILE%/vimfiles/bundle/vundle
-"C:\Program Files (x86)\Vim\vim80\gvim.exe" +PluginInstall +qall
+"C:\Program Files\Vim\vim81\gvim.exe" +PlugInstall +qall
 
 ECHO BUILD YOUCOMPLETEME
 pause
-"%USERPROFILE\vimfiles\bundles\YouCompleteMe\install.py"
+REM "%USERPROFILE%\vimfiles\bundle\YouCompleteMe\install.py"
 pause

@@ -69,7 +69,6 @@ Plug 'tomasr/molokai'
 
 call plug#end()
 
-
 " GENERAL
 filetype plugin indent on
 set backspace=start,indent,eol
@@ -131,6 +130,7 @@ let g:closetag_filenames               = '*.html,*.ovpn,*.xhtml,*.phtml'
 let g:django_filetypes                 = '*.py'
 let g:jedi#auto_close_doc              = 1
 let g:jedi#completions_command         = "<C-Space>"
+let g:powerline_pycmd                  = 'py3'
 let g:syntastic_python_checkers        = ['python3']
 let g:user_emmet_leader_key            = ','
 
