@@ -8,11 +8,12 @@ function backup() {
 function convert() {
     echo "Converting windows files"
     cp -v .vimrc _vimrc
+    sed -i'' -e "s/Plug 'Valloric/\"Plug 'Valloric/" _vimrc
     sed -i'' -e "s@call vundle#rc()@call vundle#rc('\$HOME/vimfiles/bundle')@" _vimrc
-    sed -i'' -e 's/~\/.vim\//~\/vimfiles\//g' _vimrc
     sed -i'' -e 's/.vimrc/_vimrc/g' _vimrc 
     sed -i'' -e 's/set guifont=.*/set guifont=DejaVu_Sans_Mono_for_Powerline:h10:cANSI/' _vimrc
-    sed -i'' -e "s/Plug 'Valloric/\"Plug 'Valloric/" _vimrc
+    sed -i'' -e 's/unnamedplus/unnamed/' _vimrc
+    sed -i'' -e 's/~\/.vim\//~\/vimfiles\//g' _vimrc
 }
 
 function install() {
@@ -52,6 +53,7 @@ function sync() {
     rsync -rtv --delete \
         --exclude-from exclude.linux \
         --exclude=.git \
+        --exclude=.vim/autoload \
         --exclude=.vim/bundle \
         ~/.vim ~/.vimrc .
     convert

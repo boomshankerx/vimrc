@@ -26,7 +26,6 @@ Plug 'honza/vim-snippets'
 Plug 'jceb/vim-orgmode'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
-Plug 'majutsushi/tagbar'
 Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
@@ -45,19 +44,22 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired' 
 Plug 'vim-scripts/Align'
-Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/utl.vim'
 Plug 'vim-syntastic/syntastic'
+
 " PLUGINS PYTHON
 Plug 'davidhalter/jedi-vim'
 Plug 'tweekmonster/django-plus.vim'
+
 " PLUGINS DISABLED
 "Plug 'FuzzyFinder'
 "Plug 'L9'
 "Plug 'MarcWeber/vim-addon-mw-utils'
 "Plug 'junegunn/fzf'
 "Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 "Plug 'project.tar.gz'
+"Plug 'vim-scripts/taglist.vim'
 "Plug 'vimwiki/vimwiki'
 
 " COLOR SCHEMES
@@ -69,11 +71,10 @@ Plug 'tomasr/molokai'
 
 call plug#end()
 
-
 " GENERAL
 filetype plugin indent on
 set backspace=start,indent,eol
-set clipboard=unnamedplus
+set clipboard=unnamed
 set cursorline
 set diffopt+=vertical
 set encoding=utf-8
@@ -131,6 +132,8 @@ let g:closetag_filenames               = '*.html,*.ovpn,*.xhtml,*.phtml'
 let g:django_filetypes                 = '*.py'
 let g:jedi#auto_close_doc              = 1
 let g:jedi#completions_command         = "<C-Space>"
+let g:powerline_pycmd                  = 'py3'
+let g:proj_run1 = ':vnew %f'
 let g:syntastic_python_checkers        = ['python3']
 let g:user_emmet_leader_key            = ','
 
@@ -147,10 +150,8 @@ let g:ycm_key_list_select_completion   = ['<C-n>', '<Down>']
 autocmd Filetype html,ovpn,xhtml,xml,xsl source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
 autocmd Filetype html,xhtml,php set nowrap
 
-" PROJECT
-let g:proj_run1 = ':vnew %f'
-
-" === KEYBOARD MAPS ===
+" KEYBOARD MAPS
+"
 " NORMAL MODE
 
 " SWAP LINE UP AND DOWN
