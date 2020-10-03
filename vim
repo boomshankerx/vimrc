@@ -44,7 +44,7 @@ function install_plugins() {
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     #git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim +PlugInstall +qall
-    python3 ~/.vim/bundle/YouCompleteMe/install.py
+    #python3 ~/.vim/bundle/YouCompleteMe/install.py
 }
 
 #Update repo with local config
