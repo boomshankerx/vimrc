@@ -13,7 +13,6 @@ endif
 call plug#begin('~/.vim/bundle')
 " PLUGINS
 Plug 'SirVer/ultisnips'
-Plug 'Valloric/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -51,10 +50,11 @@ Plug 'vim-syntastic/syntastic'
 Plug 'davidhalter/jedi-vim'
 Plug 'tweekmonster/django-plus.vim'
 
-" PLUGINS DISABLED
+" PLUGINS OPTIONAL
 "Plug 'FuzzyFinder'
 "Plug 'L9'
 "Plug 'MarcWeber/vim-addon-mw-utils'
+"Plug 'Valloric/YouCompleteMe'
 "Plug 'junegunn/fzf'
 "Plug 'majutsushi/tagbar'
 "Plug 'majutsushi/tagbar'
