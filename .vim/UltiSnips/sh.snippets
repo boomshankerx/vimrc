@@ -1,24 +1,3 @@
-snippet confirm "Confirmation function" b
-confirm() {
-# call with a prompt string or use a default
-	read -r -p "${1:-Are you sure? [y/N]} " response
-	case "$response" in
-		[yY][eE][sS]|[yY])
-			true
-				;;
-		*)
-			false
-			;;
-		esac
-}
-endsnippet
-
-snippet parse_filename "Extract filename" b 
-file=$(basename "$i")
-name="${file%.*}"
-ext="${file##*.}"
-endsnippet
-
 snippet args "Basic argument processing" b
 PARAMS=""
 while (( "$#" )); do
@@ -42,5 +21,30 @@ shift
 esac
 done# set positional arguments in their proper place
 eval set -- "$PARAMS"
+endsnippet
+
+snippet confirm "Confirmation function" b
+confirm() {
+# call with a prompt string or use a default
+	read -r -p "${1:-Are you sure? [y/N]} " response
+	case "$response" in
+		[yY][eE][sS]|[yY])
+			true
+				;;
+		*)
+			false
+			;;
+		esac
+}
+endsnippet
+
+snippet parse_filename "Extract filename" b 
+file=$(basename "$i")
+name="${file%.*}"
+ext="${file##*.}"
+endsnippet
+
+snippet zsh "zsh she bang" b
+#!/usr/bin/env zsh
 endsnippet
 
