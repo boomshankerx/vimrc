@@ -47,7 +47,7 @@ Plug 'vim-syntastic/syntastic'
 
 " PLUGINS PYTHON
 Plug 'davidhalter/jedi-vim'
-Plug 'tweekmonster/django-plus.vim'
+"Plug 'tweekmonster/django-plus.vim'
 
 " PLUGINS OPTIONAL
 "Plug 'FuzzyFinder'
