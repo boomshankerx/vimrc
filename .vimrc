@@ -22,7 +22,6 @@ Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'honza/vim-snippets'
-Plug 'jceb/vim-orgmode'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'mattn/emmet-vim'
@@ -55,6 +54,7 @@ Plug 'tweekmonster/django-plus.vim'
 "Plug 'L9'
 "Plug 'MarcWeber/vim-addon-mw-utils'
 "Plug 'Valloric/YouCompleteMe'
+"Plug 'jceb/vim-orgmode'
 "Plug 'junegunn/fzf'
 "Plug 'majutsushi/tagbar'
 "Plug 'majutsushi/tagbar'
@@ -153,6 +153,17 @@ autocmd Filetype html,xhtml,php set nowrap
 " KEYBOARD MAPS
 "
 " NORMAL MODE
+nnoremap <C-Enter> <ESC>"+gPa
+nnoremap <C-c> V"+y
+nnoremap <Enter> <C-w>W
+nnoremap <F3> :CtrlP<CR>
+nnoremap <F4> :NERDTree<CR>
+nnoremap <F5> :w<CR>
+nnoremap <S-Space> <C-w>h
+nnoremap <Space> <C-w>w
+nnoremap <leader>v :so ~/.vimrc<CR>
+nnoremap <leader>vv :e ~/.vimrc<CR>
+nnoremap <silent> <C-s> :update<CR>
 
 " SWAP LINE UP AND DOWN
 if has('gui_running') 
@@ -163,23 +174,12 @@ else
     nnoremap k :m .-2<CR>==
 endif
 
-nnoremap <C-Enter> <ESC>"+gPa
-nnoremap <C-c> V"+y
-nnoremap <Enter> <C-w>W
-nnoremap <F3> :CtrlP<CR>
-nnoremap <F4> :NERDTree<CR>
-nnoremap <F5> :w<CR>
-nnoremap <Space> <C-w>w
-nnoremap <S-Space> <C-w>h
-nnoremap <leader>v :so ~/.vimrc<CR>
-nnoremap <leader>vv :e ~/.vimrc<CR>
-nnoremap <silent> <C-s> :update<CR>
-
 " INSERT MODE
-imap <C-Enter> <ESC>"+gpa
+imap <C-Enter> <ESC>"+gPa
 imap jj <ESC>
 imap JJ <ESC>
 
 " VISUAL MODE
 vmap <C-c> "+y
-vmap <F5> :sort<CR>
+vmap <F4> :sort<CR>
+
