@@ -5,17 +5,6 @@ function backup() {
     tar -zcf ~/vim.`date +"%Y-%m-%d.%H%M%S"`.tgz .vim .vimrc
 }
 
-function convert() {
-    echo "Converting windows files"
-    cp -v .vimrc _vimrc
-    sed -i'' -e "s/Plug 'Valloric/\"Plug 'Valloric/" _vimrc
-    sed -i'' -e "s@call vundle#rc()@call vundle#rc('\$HOME/vimfiles/bundle')@" _vimrc
-    sed -i'' -e 's/.vimrc/_vimrc/g' _vimrc 
-    sed -i'' -e 's/set guifont=.*/set guifont=DejaVu_Sans_Mono_for_Powerline:h10:cANSI/' _vimrc
-    sed -i'' -e 's/unnamedplus/unnamed/' _vimrc
-    sed -i'' -e 's/~\/.vim\//~\/vimfiles\//g' _vimrc
-}
-
 function install() {
     install_config
     install_plugins
@@ -42,10 +31,8 @@ function install_config() {
 function install_plugins() {
     rm -fr ~/.vim/bundle/
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    #git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     vim +PlugInstall +qall
     vam install youcompleteme
-    #python3 ~/.vim/bundle/YouCompleteMe/install.py
 }
 
 #Update repo with local config
@@ -69,7 +56,6 @@ function show_help() {
     echo "-i|--install : Install config and plugins"
     echo "-p|--plugins : Install plugins"
     echo "-s|--sync    : Sync repo with local config"
-    echo "-x|--convert : Convert config to win / mac"
     echo "-y|          : Toggle YCM plugin inside config"
 }
 

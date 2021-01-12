@@ -3,3 +3,5 @@
 .vim/autoload
 /*.vim/after*/
 /*.vim/ftplugins*/
+_vimrc
+/_vimrc
