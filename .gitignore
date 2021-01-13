@@ -1,7 +1,6 @@
 *.swp
-.vim/bundle
 .vim/autoload
+.vim/bundle
 /*.vim/after*/
 /*.vim/ftplugins*/
-_vimrc
 /_vimrc
