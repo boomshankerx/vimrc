@@ -4,10 +4,10 @@ $DEST = "$env:USERPROFILE\vimfiles\"
 Write-Host "CONVERT AND COPY CONFIG"
 (Get-Content ".vimrc") | ForEach-Object {
     $_ `
-       -replace '~/.vim','~/vimfiles' `
        -replace '.vimrc', '_vimrc' `
-       -replace 'unnamedplus', 'unnamed' `
        -replace 'set guifont=.*$', 'set guifont=DejaVu_Sans_Mono_for_Powerline:h10:cANSI' `
+       -replace 'unnamedplus', 'unnamed' `
+       -replace '~/.vim/','~/vimfiles/' `
 } | Set-Content _vimrc
 Copy-Item _vimrc $env:USERPROFILE 
 

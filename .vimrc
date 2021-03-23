@@ -155,6 +155,7 @@ autocmd Filetype html,xhtml,php set nowrap
 " NORMAL MODE
 nnoremap <C-Enter> <ESC>"+gPa
 nnoremap <C-c> V"+y
+nnoremap <C-v> "+p
 nnoremap <Enter> <C-w>W
 nnoremap <F3> :CtrlP<CR>
 nnoremap <F4> :NERDTree<CR>
@@ -176,10 +177,11 @@ endif
 
 " INSERT MODE
 imap <C-Enter> <ESC>"+gPa
-imap jj <ESC>
+imap <C-v> <C-r><C-o>+
 imap JJ <ESC>
+imap jj <ESC>
 
 " VISUAL MODE
-vmap <C-c> "+y
+vmap <C-c> "+yi
 vmap <F4> :sort<CR>
 
