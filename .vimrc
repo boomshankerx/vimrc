@@ -96,7 +96,7 @@ set textwidth=0
 colorscheme gruvbox
 set background=dark
 set columns=110
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
 set lines=40
 set t_Co=256
 syntax enable
@@ -180,6 +180,7 @@ imap <C-Enter> <ESC>"+gPa
 imap <C-v> <C-r><C-o>+
 imap JJ <ESC>
 imap jj <ESC>
+imap kj <ESC>
 
 " VISUAL MODE
 vmap <C-c> "+yi
