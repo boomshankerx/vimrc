@@ -43,8 +43,8 @@ function sync() {
         --exclude=.git \
         --exclude=.vim/autoload \
         --exclude=.vim/bundle \
+        --exclude=.vim/doc \
         ~/.vim ~/.vimrc .
-    convert
 }
 
 #Show usage
@@ -59,7 +59,7 @@ function show_help() {
     echo "-y|          : Toggle YCM plugin inside config"
 }
 
-OPT=$(getopt -o bchipsx --long backup,config,convert,help,init,install,sync -- "$@")
+OPT=$(getopt -o bchips --long backup,config,help,init,install,sync -- "$@")
 [ $? == 0 ] || exit 1
 eval set -- "$OPT"
 
@@ -72,7 +72,6 @@ while true; do
         -i|--install ) install;;
         -p|--plugins ) install_plugins;;
         -s|--sync    ) sync;;
-        -x|--convert ) convert;;
         -y           ) toggle_ycm;;
         --           ) shift; break;;
     esac
