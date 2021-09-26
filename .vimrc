@@ -126,6 +126,7 @@ autocmd FileType python set omnifunc=python3complete#Complete
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 " PLUGIN SETTINGS
+"let g:NERDCreateDefaultMappings        = 0 
 let g:NERDTreeShowHidden               = 1
 let g:Powerline_symbols                = 'fancy'
 let g:closetag_filenames               = '*.html,*.ovpn,*.xhtml,*.phtml'
@@ -153,14 +154,14 @@ autocmd Filetype html,xhtml,php set nowrap
 " KEYBOARD MAPS
 "
 " NORMAL MODE
+"nnoremap <C-v> "+p
 nnoremap <C-Enter> <ESC>"+gPa
 nnoremap <C-c> V"+y
-nnoremap <C-v> "+p
 nnoremap <Enter> <C-w>W
 nnoremap <F3> :CtrlP<CR>
 nnoremap <F4> :NERDTree<CR>
 nnoremap <F5> :w<CR>
-nnoremap <S-Space> <C-w>h
+nnoremap <S-Space> <C-w>W
 nnoremap <Space> <C-w>w
 nnoremap <leader>v :so ~/.vimrc<CR>
 nnoremap <leader>vv :e ~/.vimrc<CR>
