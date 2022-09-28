@@ -20,4 +20,4 @@ Copy-Item -Recurse ".vim\*" -Destination $DEST
 # INSTALL VIM-PLUG AND RUN
 Write-Host "INSTALL PLUGINS"
 & curl.exe -fLo $env:USERPROFILE\vimfiles\autoload\plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-& "C:\Program Files (x86)\Vim\vim82\gvim.exe" +PlugInstall +qall
+& "C:\Program Files\Vim\vim90\gvim.exe" +PlugInstall +qall
