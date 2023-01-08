@@ -117,7 +117,7 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 " PLUGIN SETTINGS
 let g:NERDTreeShowHidden               = 1
 let g:airline_powerline_fonts          = 1
-let g:airline_theme                    = 'base16_darkscale_dark'
+let g:airline_theme                    = 'minimalist'
 let g:closetag_filenames               = '*.html,*.ovpn,*.xhtml,*.phtml'
 let g:django_filetypes                 = '*.py'
 let g:jedi#auto_close_doc              = 1
