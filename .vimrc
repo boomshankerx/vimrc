@@ -1,8 +1,8 @@
 " pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+"runtime bundle/vim-pathogen/autoload/pathogen.vim
+"call pathogen#infect()
 
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -25,9 +25,8 @@ Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'mattn/emmet-vim'
-Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
+"Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sjl/gundo.vim'
@@ -41,31 +40,21 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired' 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/Align'
 Plug 'vim-scripts/utl.vim'
 Plug 'vim-syntastic/syntastic'
 
-" PLUGINS PYTHON
-Plug 'davidhalter/jedi-vim'
-"Plug 'tweekmonster/django-plus.vim'
-
 " PLUGINS OPTIONAL
-"Plug 'FuzzyFinder'
-"Plug 'L9'
-"Plug 'MarcWeber/vim-addon-mw-utils'
 "Plug 'Valloric/YouCompleteMe'
-"Plug 'jceb/vim-orgmode'
 "Plug 'junegunn/fzf'
 "Plug 'majutsushi/tagbar'
 "Plug 'majutsushi/tagbar'
-"Plug 'project.tar.gz'
-"Plug 'vim-scripts/taglist.vim'
-"Plug 'vimwiki/vimwiki'
 
 " COLOR SCHEMES
-Plug 'altercation/vim-colors-solarized'
-Plug 'antlypls/vim-colors-codeschool'
-Plug 'chriskempson/base16-vim'
+Plug 'cocopon/iceberg.vim'
+Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
 
@@ -93,7 +82,7 @@ set splitright
 set textwidth=0
 
 " VISUAL
-colorscheme gruvbox
+colorscheme iceberg
 set background=dark
 set columns=110
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
@@ -126,15 +115,16 @@ autocmd FileType python set omnifunc=python3complete#Complete
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 " PLUGIN SETTINGS
-"let g:NERDCreateDefaultMappings        = 0 
 let g:NERDTreeShowHidden               = 1
-let g:Powerline_symbols                = 'fancy'
+let g:airline_powerline_fonts          = 1
+let g:airline_theme                    = 'base16_darkscale_dark'
 let g:closetag_filenames               = '*.html,*.ovpn,*.xhtml,*.phtml'
 let g:django_filetypes                 = '*.py'
 let g:jedi#auto_close_doc              = 1
 let g:jedi#completions_command         = "<C-Space>"
-let g:powerline_pycmd                  = 'py3'
-let g:proj_run1 = ':vnew %f'
+"let g:powerline_pycmd                 = 'py'
+"let g:powerline_symbols               = 'fancy'
+let g:proj_run1                        = ':vnew %f'
 let g:syntastic_python_checkers        = ['python3']
 let g:user_emmet_leader_key            = ','
 
@@ -151,10 +141,11 @@ let g:ycm_key_list_select_completion   = ['<C-n>', '<Down>']
 autocmd Filetype html,ovpn,xhtml,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 autocmd Filetype html,xhtml,php set nowrap
 
-" KEYBOARD MAPS
 "
+"KEYBOARD MAPS
+"
+
 " NORMAL MODE
-"nnoremap <C-v> "+p
 nnoremap <C-Enter> <ESC>"+gPa
 nnoremap <C-c> V"+y
 nnoremap <Enter> <C-w>W
@@ -178,12 +169,11 @@ endif
 
 " INSERT MODE
 imap <C-Enter> <ESC>"+gPa
-imap <C-v> <C-r><C-o>+
+imap <C-v> <C-r> <C-o>+
 imap JJ <ESC>
 imap jj <ESC>
-imap kj <ESC>
 
 " VISUAL MODE
 vmap <C-c> "+yi
 vmap <F4> :sort<CR>
-
+vmap <F9> :sort<CR>
