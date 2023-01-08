@@ -8,8 +8,7 @@ Write-Host "CONVERT AND COPY CONFIG"
        -replace 'set guifont=.*$', 'set guifont=DejaVu_Sans_Mono_for_Powerline:h10:cANSI' `
        -replace 'unnamedplus', 'unnamed' `
        -replace '~/.vim/','~/vimfiles/' `
-} | Set-Content _vimrc
-Copy-Item _vimrc $env:USERPROFILE 
+} | Set-Content "$env:USERPROFILE\_vimrc"
 
 # COPY CONFIG FOLDER
 Write-Host "COPY CONFIG FOLDER"
