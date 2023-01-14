@@ -82,7 +82,7 @@ set splitright
 set textwidth=0
 
 " VISUAL
-colorscheme iceberg
+colorscheme onedark
 set background=dark
 set columns=110
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
