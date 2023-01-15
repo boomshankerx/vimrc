@@ -169,7 +169,7 @@ endif
 
 " INSERT MODE
 imap <C-Enter> <ESC>"+gPa
-imap <C-v> <C-r> <C-o>+
+imap <C-v> <C-r><C-o>+
 imap JJ <ESC>
 imap jj <ESC>
 
