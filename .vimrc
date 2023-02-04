@@ -85,7 +85,7 @@ set textwidth=0
 colorscheme onedark
 set background=dark
 set columns=110
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12
 set lines=40
 set t_Co=256
 syntax enable
@@ -128,11 +128,11 @@ let g:proj_run1                        = ':vnew %f'
 let g:syntastic_python_checkers        = ['python3']
 let g:user_emmet_leader_key            = ','
 
-" SUPERTAB/COMPLETION
+" SUPERTAB/ULTISNIPS/YCM
 let g:SuperTabDefaultCompletionType    = "<C-n>"
-let g:UltiSnipsExpandTrigger           = "<C-j>"
-let g:UltiSnipsJumpForwardTrigger      = "<C-j>"
-let g:UltiSnipsJumpBackwardTrigger     = "<C-k>"
+let g:UltiSnipsExpandTrigger           = "<tab>"
+let g:UltiSnipsJumpForwardTrigger      = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger     = "<s-tab>"
 let g:UltiSnipsListSnippets            = "<C-S-k>" "List possible snippets based on current file
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:ycm_key_list_select_completion   = ['<C-n>', '<Down>']
