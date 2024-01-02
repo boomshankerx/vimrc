@@ -146,7 +146,9 @@ autocmd Filetype html,xhtml,php set nowrap
 "
 
 " NORMAL MODE
+nnoremap <C-/> <plug>NERDCommenterToggle
 nnoremap <C-Enter> <ESC>"+gPa
+nnoremap <C-_> <plug>NERDCommenterToggle
 nnoremap <C-c> V"+y
 nnoremap <Enter> <C-w>W
 nnoremap <F3> :CtrlP<CR>
@@ -157,6 +159,8 @@ nnoremap <Space> <C-w>w
 nnoremap <leader>v :so ~/.vimrc<CR>
 nnoremap <leader>vv :e ~/.vimrc<CR>
 nnoremap <silent> <C-s> :update<CR>
+nnoremap VV ggVG
+
 
 " SWAP LINE UP AND DOWN
 if has('gui_running') 
@@ -168,12 +172,14 @@ else
 endif
 
 " INSERT MODE
-imap <C-Enter> <ESC>"+gPa
-imap <C-v> <C-r><C-o>+
-imap JJ <ESC>
-imap jj <ESC>
+inoremap <C-Enter> <ESC>"+gPa
+inoremap <C-v> <C-r><C-o>+
+inoremap JJ <ESC>
+inoremap jj <ESC>
 
 " VISUAL MODE
-vmap <C-c> "+yi
-vmap <F4> :sort<CR>
-vmap <F9> :sort<CR>
+vnoremap <C-/> <plug>NERDCommenterToggle<CR>gv
+vnoremap <C-_> <plug>NERDCommenterToggle<CR>gv
+vnoremap <C-c> "+yi
+vnoremap <F4> :sort<CR>
+vnoremap <F9> :sort<CR>
