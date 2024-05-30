@@ -85,7 +85,7 @@ set textwidth=0
 colorscheme onedark
 set background=dark
 set columns=110
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12
+set guifont=FiraCode\ Nerd\ Font\ Mono\ 14
 set lines=40
 set t_Co=256
 syntax enable
