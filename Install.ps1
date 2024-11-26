@@ -5,7 +5,7 @@ Write-Host "CONVERT AND COPY CONFIG"
 (Get-Content ".vimrc") | ForEach-Object {
     $_ `
        -replace '.vimrc', '_vimrc' `
-       -replace 'set guifont=.*$', 'set guifont=FiraCode_Nerd_Font_Mono:h14' `
+       -replace 'set guifont=.*$', 'set guifont=FiraCode_Nerd_Font_Mono:h12' `
        -replace 'unnamedplus', 'unnamed' `
        -replace '~/.vim/','~/vimfiles/' `
 } | Set-Content "$env:USERPROFILE\_vimrc"
