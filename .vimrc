@@ -50,12 +50,12 @@ Plug 'vim-syntastic/syntastic'
 "Plug 'Valloric/YouCompleteMe'
 "Plug 'junegunn/fzf'
 "Plug 'majutsushi/tagbar'
-"Plug 'majutsushi/tagbar'
 
 " COLOR SCHEMES
 Plug 'cocopon/iceberg.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
+Plug 'nordtheme/vim'
 Plug 'tomasr/molokai'
 
 call plug#end()
@@ -82,13 +82,16 @@ set splitright
 set textwidth=0
 
 " VISUAL
+"set columns=110
+"set lines=40
+"set t_Co=256
 colorscheme onedark
 set background=dark
-" set columns=110
 set guifont=FiraCode\ Nerd\ Font\ Mono\ 14
-" set lines=40
-set t_Co=256
 syntax enable
+if (has("termguicolors"))
+    set termguicolors
+endif
 
 " INDENTING
 set autoindent

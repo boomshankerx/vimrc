@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+SCRIPT_PATH=$(dirname $(realpath $0))
+echo $SCRIPT_PATH
+cd $SCRIPT_PATH
+
+# Configure
+[[ -d ~/.local/bin ]] || mkdir -p ~/.local/bin
+[[ -L ~/.local/bin/vimrc  ]] || ln -s ~/vimrc/vimrc ~/.local/bin/vimrc
+
 function backup() {
     echo "Backup configuration"
     tar -zcf ~/vim.`date +"%Y-%m-%d.%H%M%S"`.tgz .vim .vimrc
@@ -44,7 +52,7 @@ function sync() {
         --exclude=.vim/autoload \
         --exclude=.vim/bundle \
         --exclude=.vim/doc \
-        ~/.vim ~/.vimrc .
+        ~/.vim ~/.vimrc $SCRIPT_PATH
 }
 
 #Show usage
