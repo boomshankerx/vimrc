@@ -3,6 +3,7 @@
 SCRIPT_PATH=$(dirname $(realpath $0))
 echo $SCRIPT_PATH
 cd $SCRIPT_PATH
+git pull
 
 # Configure
 [[ -d ~/.local/bin ]] || mkdir -p ~/.local/bin
