@@ -42,4 +42,33 @@ install_config() {
 
 }
 
+# Parse options with getopts
+while getopts "hy" opt; do
+  case "$opt" in
+  h)
+    echo "Usage: $0 [-y]"
+    echo "  -h       Show this help"
+    echo "  -y       Install youcompleteme"
+    exit 0
+    ;;
+  y)
+    youcompleteme=true
+    ;;
+  ?)
+    echo "Invalid option: -$OPTARG"
+    echo "Try '$0 -h' for help"
+    exit 1
+    ;;
+  esac
+done
+
+# Shift past the processed options
+shift $((OPTIND - 1))
+
+if [[ "$youcompleteme" == true ]]; then
+  sudo apt install vim-addon-manager vim-youcompleteme
+  vam install youcompleteme
+  exit 0
+fi
+
 install_config
