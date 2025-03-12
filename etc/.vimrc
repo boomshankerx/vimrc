@@ -1,3 +1,4 @@
+" 
 " pathogen
 "runtime bundle/vim-pathogen/autoload/pathogen.vim
 "call pathogen#infect()
@@ -32,6 +33,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'sjl/gundo.vim'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-cucumber'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
@@ -148,10 +150,16 @@ autocmd Filetype html,xhtml,php set nowrap
 "KEYBOARD MAPS
 "
 
-" NORMAL MODE
+" Comments
 nnoremap <C-/> <plug>NERDCommenterToggle
-nnoremap <C-Enter> <ESC>"+gPa
 nnoremap <C-_> <plug>NERDCommenterToggle
+nmap qq gcc
+vnoremap <C-/> <plug>NERDCommenterToggle<CR>gv
+vnoremap <C-_> <plug>NERDCommenterToggle<CR>gv
+vmap q gc
+
+" NORMAL MODE
+nnoremap <C-Enter> <ESC>"+gPa
 nnoremap <C-c> V"+y
 nnoremap <Enter> <C-w>W
 nnoremap <F3> :CtrlP<CR>
@@ -163,7 +171,6 @@ nnoremap <leader>v :so ~/.vimrc<CR>
 nnoremap <leader>vv :e ~/.vimrc<CR>
 nnoremap <silent> <C-s> :update<CR>
 nnoremap VV ggVG
-
 
 " SWAP LINE UP AND DOWN
 if has('gui_running') 
@@ -181,8 +188,6 @@ inoremap JJ <ESC>
 inoremap jj <ESC>
 
 " VISUAL MODE
-vnoremap <C-/> <plug>NERDCommenterToggle<CR>gv
-vnoremap <C-_> <plug>NERDCommenterToggle<CR>gv
 vnoremap <C-c> "+yi
 vnoremap <F4> :sort<CR>
 vnoremap <F9> :sort<CR>
