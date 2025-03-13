@@ -122,13 +122,11 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 " PLUGIN SETTINGS
 let g:NERDTreeShowHidden               = 1
 let g:airline_powerline_fonts          = 1
-let g:airline_theme                    = 'minimalist'
+let g:airline_theme                    = 'powerlineish'
 let g:closetag_filenames               = '*.html,*.ovpn,*.xhtml,*.phtml'
 let g:django_filetypes                 = '*.py'
 let g:jedi#auto_close_doc              = 1
 let g:jedi#completions_command         = "<C-Space>"
-"let g:powerline_pycmd                 = 'py'
-"let g:powerline_symbols               = 'fancy'
 let g:proj_run1                        = ':vnew %f'
 let g:syntastic_python_checkers        = ['python3']
 let g:user_emmet_leader_key            = ','
@@ -147,7 +145,7 @@ autocmd Filetype html,ovpn,xhtml,xml,xsl source ~/.vim/bundle/closetag.vim/plugi
 autocmd Filetype html,xhtml,php set nowrap
 
 "
-"KEYBOARD MAPS
+" KEYBOARD MAPS
 "
 
 " Comments
