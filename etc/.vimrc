@@ -75,7 +75,7 @@ set incsearch
 set laststatus=2
 set nocompatible
 set nowrap
-set number
+set number relativenumber
 set ruler
 set showcmd
 set showmatch
@@ -168,6 +168,7 @@ nnoremap <Space> <C-w>w
 nnoremap <leader>v :so ~/.vimrc<CR>
 nnoremap <leader>vv :e ~/.vimrc<CR>
 nnoremap <silent> <C-s> :update<CR>
+nnoremap VC ggVGy
 nnoremap VV ggVG
 
 " SWAP LINE UP AND DOWN
